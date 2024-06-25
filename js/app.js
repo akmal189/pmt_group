@@ -61,7 +61,45 @@ document.addEventListener('DOMContentLoaded', function () {
                     SWIPER.autoplay.start();
                 })
             }
-        }
+        },
         // OUR PROJECTS END
+
+        // PROJECT PAGE BEGIN
+        projectSliders: function() {
+            const SWIPER = new Swiper('.swiper.project-info__left-slider', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'slide',
+                speed: 1000,
+                spaceBetween: 0,
+                autoplay: {
+                    delay: 999999,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                navigation: {
+                    nextEl: '.project-info__left-slider .swiper-button-next',
+                    prevEl: '.project-info__left-slider .swiper-button-prev',
+                }
+            });
+            
+            const SWIPER2 = new Swiper('.swiper.project-info__result-slider', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'slide',
+                speed: 1000,
+                spaceBetween: 0,
+                autoplay: {
+                    delay: 999999,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                navigation: {
+                    nextEl: '.project-info__result-slider .swiper-button-next',
+                    prevEl: '.project-info__result-slider .swiper-button-prev',
+                }
+            });
+        }
+        // PROJECT PAGE END
     }
 }())
