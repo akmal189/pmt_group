@@ -99,6 +99,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     prevEl: '.project-info__result-slider .swiper-button-prev',
                 }
             });
+
+            const SWIPER3 = new Swiper('.swiper.other-projects__slider', {
+                slidesPerView: 3,
+                loop: true,
+                effect: 'slide',
+                speed: 1000,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 999999,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                navigation: {
+                    nextEl: '.other-projects .swiper-button-next',
+                    prevEl: '.other-projects .swiper-button-prev',
+                }
+            });
         }
         // PROJECT PAGE END
     }
