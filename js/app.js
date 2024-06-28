@@ -21,11 +21,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // HEADER BEGIN
         headerFunctions: function () {
             const LANG_BTN = document.querySelector('.site-header__langs-active');
+            const HEADER_WR = document.querySelector('.site-header__inner');
 
             LANG_BTN.addEventListener('click', () => {
                 LANG_BTN.classList.toggle('active');
                 document.querySelector('.site-header__langs-list').classList.toggle('active');
 
+            })
+
+            document.addEventListener('scroll', () => {
+                if(window.scrollY > 0) {
+                    HEADER_WR.classList.add('fixed')
+                } else {
+                    HEADER_WR.classList.remove('fixed')
+                }
             })
         },
         // HEADER END

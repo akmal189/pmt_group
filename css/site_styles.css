@@ -116,6 +116,10 @@ img, iframe, video {
   color: #fff;
 }
 
+.site-wrapper {
+  overflow: hidden;
+}
+
 .site-inner.inner-page {
   width: 100%;
   max-width: 1800px;
@@ -198,7 +202,7 @@ img, iframe, video {
 }
 
 .site-header.inner-page {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .site-header.about-page {
   margin-bottom: 0;
@@ -208,6 +212,19 @@ img, iframe, video {
 }
 .site-header.about-page + .site-inner .industrial-block .industrial-block__image img {
   max-height: 564px;
+}
+.site-header.about-page ~ .site-footer {
+  background: #fff;
+}
+.site-header.about-page ~ .site-footer .site-footer__title, .site-header.about-page ~ .site-footer .site-footer__address-title, .site-header.about-page ~ .site-footer .site-footer__mails-item a, .site-header.about-page ~ .site-footer .site-footer__phones-item a, .site-header.about-page ~ .site-footer .site-footer__copy a:hover {
+  color: #000;
+}
+.site-header.about-page ~ .site-footer .site-footer__socials-item a img, .site-header.about-page ~ .site-footer .site-footer__address-icon img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+.site-header.about-page ~ .site-footer .site-footer__phones-item a:before, .site-header.about-page ~ .site-footer .site-footer__mails-item a:before {
+  background: #000;
 }
 .site-header.about-page .site-header__image {
   position: relative;
@@ -302,7 +319,7 @@ img, iframe, video {
   font-weight: 400;
   line-height: 30px;
   text-align: left;
-  color: #D2D4DC;
+  color: rgba(210, 212, 220, 0.4);
 }
 .site-header__inner {
   display: -webkit-box;
@@ -312,12 +329,17 @@ img, iframe, video {
       -ms-flex-align: center;
           align-items: center;
   gap: 49px;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 5;
+  z-index: 20;
   padding: 40px 55px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.site-header__inner.fixed {
+  background: #000;
 }
 .site-header__logo img {
   max-width: 200px;
@@ -911,7 +933,7 @@ img, iframe, video {
      -moz-column-gap: 30px;
           column-gap: 30px;
   width: 100%;
-  max-width: 1758px;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: 58px;
 }
@@ -960,7 +982,7 @@ img, iframe, video {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  max-width: 1758px;
+  max-width: 100%;
   margin: 0 auto;
   padding-right: 125px;
 }
@@ -1299,19 +1321,34 @@ img, iframe, video {
           transform: translateX(10px);
 }
 
-.clients-block {
+.site-wrapper .clients-block {
   padding: 78px 20px 62px;
+  position: relative;
+  overflow: visible;
 }
-.clients-block__inner {
+.site-wrapper .clients-block:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9999px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(210, 212, 220, 0.4);
+}
+.site-wrapper .clients-block__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 30px;
+  position: relative;
+  z-index: 1;
 }
-.clients-block__left {
+.site-wrapper .clients-block__left {
   width: 470px;
 }
-.clients-block__title {
+.site-wrapper .clients-block__title {
   font-size: 32px;
   font-weight: 400;
   line-height: 46px;
@@ -1319,7 +1356,7 @@ img, iframe, video {
   color: #000;
   margin-bottom: 10px;
 }
-.clients-block__text {
+.site-wrapper .clients-block__text {
   padding-left: 68px;
   font-size: 18px;
   font-weight: 300;
@@ -1327,7 +1364,7 @@ img, iframe, video {
   text-align: left;
   color: #000;
 }
-.clients-block__right {
+.site-wrapper .clients-block__right {
   width: calc(100% - 500px);
 }
 
@@ -1832,9 +1869,32 @@ img, iframe, video {
   width: 100%;
   max-width: calc(100% - 600px);
 }
+.contacts-block__map-address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.contacts-block__map-address .icon {
+  font-size: 0;
+}
+.contacts-block__map-address .icon img {
+  max-width: 25px;
+}
+.contacts-block__map-address .title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: #000;
+}
 .contacts-block__requisites {
   width: 100%;
-  background: #D2D4DC;
+  background: rgba(210, 212, 220, 0.4);
   padding: 36px 40px 40px;
 }
 .contacts-block__requisites-title {

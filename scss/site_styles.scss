@@ -98,6 +98,9 @@ img, iframe, video {
     padding: 10px;
     color: #fff;
 }
+.site-wrapper {
+    overflow: hidden;
+}
 .site-inner.inner-page {
     width: 100%;
     max-width: 1800px;
@@ -178,7 +181,7 @@ img, iframe, video {
 
 .site-header {
     &.inner-page {
-        margin-bottom: 40px;
+        margin-bottom: 60px;
     }
     &.about-page {
         margin-bottom: 0;
@@ -186,6 +189,18 @@ img, iframe, video {
             margin-top: 0;
             .industrial-block__image img {
                 max-height: 564px;
+            }
+        }
+        & ~ .site-footer  {
+            background: #fff;
+            .site-footer__title, .site-footer__address-title, .site-footer__mails-item a, .site-footer__phones-item a, .site-footer__copy a:hover {
+                color: #000;
+            }
+            .site-footer__socials-item a img, .site-footer__address-icon img {
+                filter: invert(1);
+            }
+            .site-footer__phones-item a:before, .site-footer__mails-item a:before {
+                background: #000;
             }
         }
         .site-header__image {
@@ -268,7 +283,7 @@ img, iframe, video {
                     font-weight: 400;
                     line-height: 30px;
                     text-align: left;
-                    color: #D2D4DC;
+                    color: rgba(#D2D4DC, .4);
                 }
             }
         }
@@ -277,12 +292,16 @@ img, iframe, video {
         display: flex;
         align-items: center;
         gap: 49px;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         left: 0;
-        z-index: 5;
+        z-index: 20;
         padding: 40px 55px;
+        transition: all 0.3s ease;
+        &.fixed {
+            background: #000;
+        }
     }
     &__logo {
         img {
@@ -843,7 +862,7 @@ img, iframe, video {
             column-count: 2;
             column-gap: 30px;
             width: 100%;
-            max-width: 1758px;
+            max-width: 100%;
             margin: 0 auto;
             margin-top: 58px;
             > div {
@@ -889,7 +908,7 @@ img, iframe, video {
         gap: 30px;
         align-items: center;
         width: 100%;
-        max-width: 1758px;
+        max-width: 100%;
         margin: 0 auto;
         padding-right: 125px;
         @media all and (max-width: 1600px) {
@@ -1219,12 +1238,25 @@ img, iframe, video {
     }
 }
 
-.clients-block {
+.site-wrapper .clients-block {
     padding: 78px 20px 62px;
-    //background: #D2D4DC;
+    position: relative;
+    overflow: visible;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 9999px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(#D2D4DC, .4);
+    }
     &__inner {
         display: flex;
         gap: 30px;
+        position: relative;
+        z-index: 1;
     }
     &__left {
         width: 470px;
@@ -1705,9 +1737,28 @@ img, iframe, video {
         width: 100%;
         max-width: calc(100% - 600px);
     }
+    &__map-address {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        .icon {
+            font-size: 0;
+            img {
+                max-width: 25px;
+            }
+        }
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            text-align: left;
+            color: #000;
+        }
+    }
     &__requisites {
         width: 100%;
-        background: #D2D4DC;
+        background: rgba(#D2D4DC, .4);
         padding: 36px 40px 40px;
         &-title {
             font-size: 32px;
