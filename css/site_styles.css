@@ -1681,8 +1681,14 @@ img, iframe, video {
 .other-projects__nav div.swiper-button-prev {
   background: url("data:image/svg+xml,%3Csvg width='43' height='43' viewBox='0 0 43 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.4619 33.5358L15.2119 21.2858L27.4619 9.03577' stroke='%235D5E6D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50% no-repeat;
 }
+.other-projects__nav div.swiper-button-prev:hover {
+  background-image: url("data:image/svg+xml,%3Csvg width='43' height='43' viewBox='0 0 43 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.748 34.0021L15.498 21.7521L27.748 9.50208' stroke='%23FF1616' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
 .other-projects__nav div.swiper-button-next {
   background: url("data:image/svg+xml,%3Csvg width='43' height='43' viewBox='0 0 43 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.2119 9.03571L27.4619 21.2857L15.2119 33.5357' stroke='%235D5E6D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50% no-repeat;
+}
+.other-projects__nav div.swiper-button-next:hover {
+  background-image: url("data:image/svg+xml,%3Csvg width='43' height='43' viewBox='0 0 43 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3301 9.50195L27.5801 21.752L15.3301 34.002' stroke='%23FF1616' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 
 .contacts-block {

@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 effect: 'slide',
                 speed: 1000,
                 spaceBetween: 30,
+                lazy: {
+                    loadPrevNext: true, // pre-loads the next image to avoid showing a loading placeholder if possible
+                    loadPrevNextAmount: 2 //or, if you wish, preload the next 2 images
+                },
                 autoplay: {
                     delay: 4000,
                     disableOnInteraction: false,
@@ -72,6 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 effect: 'slide',
                 speed: 1000,
                 spaceBetween: 0,
+                lazy: {
+                    loadPrevNext: true, // pre-loads the next image to avoid showing a loading placeholder if possible
+                    loadPrevNextAmount: 2 //or, if you wish, preload the next 2 images
+                },
                 autoplay: {
                     delay: 999999,
                     disableOnInteraction: false,
@@ -89,6 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 effect: 'slide',
                 speed: 1000,
                 spaceBetween: 0,
+                lazy: {
+                    loadPrevNext: true, // pre-loads the next image to avoid showing a loading placeholder if possible
+                    loadPrevNextAmount: 2 //or, if you wish, preload the next 2 images
+                },
                 autoplay: {
                     delay: 999999,
                     disableOnInteraction: false,
@@ -106,6 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 effect: 'slide',
                 speed: 1000,
                 spaceBetween: 30,
+                lazy: {
+                    loadPrevNext: true, // pre-loads the next image to avoid showing a loading placeholder if possible
+                    loadPrevNextAmount: 2 //or, if you wish, preload the next 2 images
+                },
                 autoplay: {
                     delay: 999999,
                     disableOnInteraction: false,
