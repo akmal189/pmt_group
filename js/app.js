@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
 
             document.addEventListener('scroll', () => {
-                if(window.scrollY > 0) {
+                if (window.scrollY > 0) {
                     HEADER_WR.classList.add('fixed')
                 } else {
                     HEADER_WR.classList.remove('fixed')
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            if(document.querySelector('.swiper.our-projects__slider')) {
+            if (document.querySelector('.swiper.our-projects__slider')) {
                 document.querySelector('.swiper.our-projects__slider').addEventListener('mouseenter', () => {
                     SWIPER.autoplay.stop();
                 })
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // OUR PROJECTS END
 
         // PROJECT PAGE BEGIN
-        projectSliders: function() {
+        projectSliders: function () {
             const SWIPER = new Swiper('.swiper.project-info__left-slider', {
                 slidesPerView: 1,
                 loop: true,
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     prevEl: '.project-info__left-slider .swiper-button-prev',
                 }
             });
-            
+
             const SWIPER2 = new Swiper('.swiper.project-info__result-slider', {
                 slidesPerView: 1,
                 loop: true,
@@ -141,7 +141,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     prevEl: '.other-projects .swiper-button-prev',
                 }
             });
-        }
+        },
         // PROJECT PAGE END
+
+        // BLOCK ANIMATIONS BEGIN
+        blockAnimations: function () {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const blocks = document.querySelectorAll(".main-blocks__item-title, .main-blocks__item-image, .main-blocks__item-text, .main-blocks__item-body .body-title, .main-blocks__item-body .body-text, .site-header__text .list .item .title, .site-header__text .list .item .body, .main-blocks__title, .industrial-block");
+
+            blocks.forEach((block) => {
+            gsap.set(block, { opacity: 0, y: 100 });
+
+                ScrollTrigger.create({
+                    trigger: block,
+                    start: "top 80%",
+                    onEnter: () => {
+                    gsap.to(block, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
+                    }
+                });
+            });
+        }
+        // BLOCK ANIMATIONS END
     }
 }())
