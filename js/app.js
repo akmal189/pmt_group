@@ -174,14 +174,22 @@ document.addEventListener('DOMContentLoaded', function () {
         blockAnimations: function () {
             gsap.registerPlugin(ScrollTrigger);
 
+<<<<<<< HEAD
             const blocks = document.querySelectorAll(".main-blocks__item-title, .main-blocks__item-image, .main-blocks__item-text, .main-blocks__item-body .body-title, .main-blocks__item-body .body-text, .site-header__text .list .item .title, .site-header__text .list .item .body, .main-blocks__title, .industrial-block__body-inner");
+=======
+            const blocks = document.querySelectorAll(".main-blocks__item-title, .main-blocks__item-image, .main-blocks__item-text, .main-blocks__item-body .body-title, .main-blocks__item-body .body-text, .site-header__text .list .item .title, .site-header__text .list .item .body, .main-blocks__title, .industrial-block");
+>>>>>>> efece1323c4799f7f58abe125f53bdd22c48b3dd
 
             blocks.forEach((block) => {
             gsap.set(block, { opacity: 0, y: 100 });
 
                 ScrollTrigger.create({
                     trigger: block,
+<<<<<<< HEAD
                     start: "top 95%",
+=======
+                    start: "top 80%",
+>>>>>>> efece1323c4799f7f58abe125f53bdd22c48b3dd
                     onEnter: () => {
                     gsap.to(block, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
                     }
