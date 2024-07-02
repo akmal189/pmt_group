@@ -307,7 +307,7 @@ img, iframe, video {
             padding: 13px;
             background: #000;
         }
-        @media all and (max-width: 480px) {
+        @media all and (max-width: 550px) {
             gap: 18px;
         }
         &.fixed {
@@ -322,7 +322,7 @@ img, iframe, video {
         img {
             max-width: 200px;
             max-height: 120px;
-            @media all and (max-width: 480px) {
+            @media all and (max-width: 550px) {
                 max-width: 75px;
             }
         }
@@ -332,7 +332,7 @@ img, iframe, video {
         display: flex;
         flex-direction: column;
         gap: 3px;
-        @media all and (max-width: 480px) {
+        @media all and (max-width: 550px) {
             gap: 0;
         }
     }
@@ -349,7 +349,7 @@ img, iframe, video {
             color: #fff;
             display: inline-block;
             position: relative;
-            @media all and (max-width: 480px) {
+            @media all and (max-width: 550px) {
                 font-size: 16px;
                 font-weight: 600;
                 line-height: 20px;
@@ -387,7 +387,7 @@ img, iframe, video {
             color: #fff;
             display: inline-block;
             position: relative;
-            @media all and (max-width: 480px) {
+            @media all and (max-width: 550px) {
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 18px;
@@ -773,6 +773,10 @@ img, iframe, video {
         width: 100%;
         gap: 100px;
         align-items: flex-start;
+        @media all and (max-width: 1024px) {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
     }
     &__title {
         font-size: 32px;
@@ -781,11 +785,19 @@ img, iframe, video {
         text-align: left;
         color: #fff;
         margin-top: -10px;
+        @media all and (max-width: 1024px) {
+            width: 100%;
+            margin-top: 0;
+        }
     }
     &__contacts {
         display: flex;
         flex-direction: column;
         margin-right: 20px;
+        @media all and (max-width: 1024px) {
+            width: 100%;
+            margin: 0;
+        }
     }
     &__phones {
 
@@ -955,9 +967,19 @@ img, iframe, video {
                 break-inside: avoid;
                 width: 100%;
                 margin-bottom: 60px;
+                @media all and (max-width: 1200px) {
+                    margin-right: 0;
+                    width: calc(100% - 7vw);
+                }
                 .main-blocks__item-body {
                     padding: 64px 70px 56px 47px;
                     max-width: 74%;
+                    @media all and (max-width: 1200px) {
+                        padding: 19px 14px 22px 27px;
+                    }
+                    @media all and (max-width: 550px) {
+                        max-width: calc(100% - 30px);
+                    }
                 }
                 .main-blocks__item-text {
                     max-width: 570px;
@@ -965,6 +987,10 @@ img, iframe, video {
                 &:first-child {
                     padding-left: 89px;
                     margin-top: 100px;
+                    @media all and (max-width: 1200px) {
+                        padding-left: 0;
+                        margin-top: 44px;
+                    }
                     .main-blocks__item-body {
                         top: 0;
                         right: 0;
@@ -979,6 +1005,10 @@ img, iframe, video {
                 }
                 &:nth-child(4n) {
                     padding-right: 125px;
+                    @media all and (max-width: 1200px) {
+                        padding-right: 0;
+                        margin-left: 0;
+                    }
                     .main-blocks__item-body {
                         padding-right: 50px;
                     }
@@ -1002,6 +1032,7 @@ img, iframe, video {
         }
         @media all and (max-width: 1200px) {
             flex-direction: column;
+            gap: 44px;
         }
     }
     &__item-item {
@@ -1029,8 +1060,23 @@ img, iframe, video {
         
     }
     &__item-item + .main-blocks__item-item {
+        @media all and (max-width: 1200px) {
+            margin-right: -7vw;
+            margin-left: 7vw;
+        }
         .main-blocks__item-title {
             margin-top: 33px;
+            @media all and (max-width: 1200px) {
+                padding-left: 26px;
+                margin-top: 11px;
+                margin-bottom: 0;
+            }
+        }
+        .main-blocks__item-text {
+            @media all and (max-width: 1200px) {
+                padding-left: 26px;
+                
+            }
         }
     }
     &__item-title {
@@ -1041,6 +1087,11 @@ img, iframe, video {
         color: #000;
         margin-bottom: 4px;
         text-transform: uppercase;
+        @media all and (max-width: 1200px) {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 46px;
+        }
         &:empty {
             display: none;
         }
@@ -1052,9 +1103,9 @@ img, iframe, video {
         text-align: left;
         color: #000;
         @media all and (max-width: 1200px) {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 400;
-            line-height: 30px;
+            line-height: 28px;
         }
     }
     &__item-image {
@@ -1089,6 +1140,7 @@ img, iframe, video {
             line-height: 46px;
             text-align: left;
             color: #fff;
+            text-transform: uppercase;
             &:empty {
                 display: none;
             }
@@ -1135,7 +1187,7 @@ img, iframe, video {
         justify-content: center;
         z-index: 1;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
-        padding: 20px;
+        padding: 20px 44px;
     }
     &__body-inner {
         padding: 20px 40px;
@@ -1145,6 +1197,9 @@ img, iframe, video {
         flex-direction: column;
         gap: 4px;
         align-items: center;
+        @media all and (max-width: 980px) {
+            min-width: 0;
+        }
     }
     &__title {
         font-size: 32px;
@@ -1152,6 +1207,7 @@ img, iframe, video {
         line-height: 46px;
         text-align: center;
         color: #fff;
+        text-transform: uppercase;
     }
     &__text {
         font-size: 18px;
