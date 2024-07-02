@@ -40,7 +40,11 @@ include _header.jade
                     <div class="main-blocks__item-text">Our company offers a variety of services to meet your project’s needs,  to take you from collaboration meetings all the way to ribbon-cutting  and beyond. We believe that every project is unique, and can customize  our approach to fit your particular project. While we are at the  forefront of and specialize in design-build, we are very familiar with a  number of delivery methods and are confident we can find the process  that will best help you meet your goals.</div>
                     <div class="main-blocks__item-image">
                         <div class="image">
-                            <img src="images/main_bl1.png" alt="main_bl1">
+                            <picture>
+                                <source media="(min-width: 551px)" srcset="images/main_bl1.png">
+                                <source media="(max-width: 550px)" srcset="images/main_bl1_mob.png">
+                                <img src="images/main_bl1.png" alt="main_bl1">
+                            </picture>
                         </div>
                         <div class="main-blocks__item-body">
                             <div class="body-title">General Contractor</div>
@@ -51,7 +55,11 @@ include _header.jade
                 <div class="main-blocks__item-item">
                     <div class="main-blocks__item-image">
                         <div class="image">
-                            <img src="images/main_bl2.png" alt="main_bl2">
+                            <picture>
+                                <source media="(min-width: 551px)" srcset="images/main_bl2.png">
+                                <source media="(max-width: 550px)" srcset="images/main_bl2_mob.png">
+                                <img src="images/main_bl2.png" alt="main_bl2">
+                            </picture>
                         </div>
                         <div class="main-blocks__item-body">
                             <div class="body-title"></div>
@@ -68,8 +76,8 @@ include _header.jade
 
 <section class="industrial-block">
     <div class="industrial-block__inner">
-        <div class="industrial-block__image">
-            <img src="images/industrial.png" alt="industrial">
+        <div class="industrial-block__image" style="background: url('images/industrial.png') 50%/cover no-repeat fixed">
+            <img src="images/industrial.png" alt="industrial" style="opacity: 0;">
         </div>
         <div class="industrial-block__body">
             <div class="industrial-block__body-inner">
