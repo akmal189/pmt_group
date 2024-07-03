@@ -165,8 +165,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 navigation: {
                     nextEl: '.other-projects .swiper-button-next',
                     prevEl: '.other-projects .swiper-button-prev',
+                },
+                breakpoints: {
+                    550: {
+                        spaceBetween: 17,
+                        slidesPerView: 1.2
+                    },
+                    641: {
+                        spaceBetween: 17,
+                        slidesPerView: 1.5
+                    },
+                    769: {
+                        spaceBetween: 17,
+                        slidesPerView: 2.2
+                    },
+                    1100: {
+                        slidesPerView: 2
+                    },
+                    1101: {
+                        slidesPerView: 3
+                    }
                 }
             });
+
+            if (window.innerWidth <= 1024 || IsMobile) {
+                if(document.querySelector('.project-info__reviews')) {
+                    document.querySelector('.project-info__body').append(document.querySelector('.project-info__reviews'));
+                }
+                if(document.querySelector('.project-info__params') && document.querySelector('.project-info__left-slider')) {
+                    document.querySelector('.project-info__left-slider').before(document.querySelector('.project-info__params'))
+                }
+            }
         },
         // PROJECT PAGE END
 
@@ -174,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
         blockAnimations: function () {
             gsap.registerPlugin(ScrollTrigger);
 
-            const blocks = document.querySelectorAll(".main-blocks__item-title, .main-blocks__item-image, .main-blocks__item-text, .main-blocks__item-body .body-title, .main-blocks__item-body .body-text, .site-header__text .list .item .title, .site-header__text .list .item .body, .main-blocks__title, .industrial-block__body-inner");
+            const blocks = document.querySelectorAll(".project-info__result-slider, .project-info__left-slider, .other-projects__title, .project-info__reviews-body, .other-projects__item-body, .other-projects__slider, .project-info__result-text > div, .project-info__title, .project-info__text, .project-info__reviews-inner, .project-info__params-item, .main-blocks__item-title, .main-blocks__item-image, .main-blocks__item-text, .main-blocks__item-body .body-title, .main-blocks__item-body .body-text, .site-header__text .list .item .title, .site-header__text .list .item .body, .main-blocks__title, .industrial-block__body-inner");
 
             blocks.forEach((block) => {
             gsap.set(block, { opacity: 0, y: 100 });
@@ -183,11 +212,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     trigger: block,
                     start: "top 95%",
                     onEnter: () => {
-                    gsap.to(block, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
+                        gsap.to(block, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
                     }
                 });
             });
-        }
+        },
         // BLOCK ANIMATIONS END
+
+        // CONTACTS PAGE BEGIN
+        contactsPageAdaptive: function() {
+            const CONTACTS_MAP = document.querySelector('.contacts-block__map');
+
+            if (window.innerWidth <= 1110 || IsMobile) {
+                if(document.querySelector('.contacts-block__map') && document.querySelector('.contacts-block__requisites')) {
+                    document.querySelector('.contacts-block__requisites').before(CONTACTS_MAP);
+                }
+            }
+        }
+        // CONTACTS PAGE END
     }
 }())
