@@ -348,7 +348,7 @@ img, iframe, video {
             gap: 18px;
         }
         &.fixed {
-            background: #000;
+            background: rgba(#000, .8);
             @media all and (min-width: 981px) {
                 padding: 9px 24px 6px;
             }

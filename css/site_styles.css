@@ -403,7 +403,7 @@ img, iframe, video {
   }
 }
 .site-header__inner.fixed {
-  background: #000;
+  background: rgba(0, 0, 0, 0.8);
 }
 @media all and (min-width: 981px) {
   .site-header__inner.fixed {
