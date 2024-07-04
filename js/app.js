@@ -28,12 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
             LANG_BTN.addEventListener('click', () => {
                 LANG_BTN.classList.toggle('active');
                 document.querySelector('.site-header__langs-list').classList.toggle('active');
+            })
 
+            document.addEventListener('click', (e) => {
+                if(!e.target.classList.contains('site-header__langs-active')) {
+                    document.querySelector('.site-header__langs-list').classList.remove('active');
+                }
             })
 
             document.addEventListener('scroll', () => {
                 if (window.scrollY > 0) {
                     HEADER_WR.classList.add('fixed')
+                    document.querySelector('.site-header__langs-list').classList.remove('active');
                 } else {
                     HEADER_WR.classList.remove('fixed')
                 }

@@ -1090,9 +1090,16 @@ img, iframe, video {
 .site-footer__socials-item a {
   font-size: 0;
 }
+.site-footer__socials-item a:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 .site-footer__socials-item a img {
   max-width: 32px;
   border-radius: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  will-change: transform;
 }
 .site-footer__right {
   display: -webkit-box;
