@@ -244,7 +244,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('.contacts-block__requisites').before(CONTACTS_MAP);
                 }
             }
-        }
+        },
         // CONTACTS PAGE END
+
+        // COOKIES BLOCK BEGIN
+        cookiesBlock: function() {
+            if(document.querySelector('.cookies-popup')) {
+                document.querySelector('.cookies-popup__btn a').addEventListener('click', () => {
+                    document.querySelector('.cookies-popup').style.display = 'none';
+                    localStorage.setItem('cookiesClosed', 1)
+                })
+                document.querySelector('.cookies-popup__closer').addEventListener('click', () => {
+                    document.querySelector('.cookies-popup').style.display = 'none';
+                    localStorage.setItem('cookiesClosed', 1)
+                })
+                if(!localStorage.getItem('cookiesClosed')) {
+                    document.querySelector('.cookies-popup').classList.add('active')
+                }
+            }
+        }
+        // COOKIES BLOCK END
     }
 }())
