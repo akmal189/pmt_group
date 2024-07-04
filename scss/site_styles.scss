@@ -1402,6 +1402,19 @@ img, iframe, video {
                 transform: scale(1);
             }
         }
+        &:hover {
+            .our-projects__btn a {
+                transform: translateX(10px);
+            }
+        }
+        .item-absolute-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+        }
     }
     &__item-image {
         font-size: 0;
@@ -1771,6 +1784,7 @@ img, iframe, video {
             left: 0;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
             z-index: 2;
+            pointer-events: none;
         }
         img {
             width: 100%;
@@ -2062,6 +2076,7 @@ img, iframe, video {
         line-height: 26px;
         text-align: left;
         color: #5D5E6D;
+        min-width: 35%;
         @media all and (max-width: 768px) {
             width: 100%;
             br {

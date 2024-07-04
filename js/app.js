@@ -126,6 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
+            lightGallery(document.querySelector('.project-info__left-slider'), {
+                download: false,
+                selector: 'a'
+            });
+
             const SWIPER2 = new Swiper('.swiper.project-info__result-slider', {
                 slidesPerView: 1,
                 loop: true,
@@ -145,6 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     nextEl: '.project-info__result-slider .swiper-button-next',
                     prevEl: '.project-info__result-slider .swiper-button-prev',
                 }
+            });
+
+            lightGallery(document.querySelector('.project-info__result-slider'), {
+                download: false,
+                selector: 'a'
             });
 
             const SWIPER3 = new Swiper('.swiper.other-projects__slider', {
