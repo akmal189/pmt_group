@@ -1622,6 +1622,10 @@ img, iframe, video {
   -webkit-transform: translateX(10px);
           transform: translateX(10px);
 }
+.our-projects__slider-item:hover .our-projects__item-image img {
+  -webkit-transform: scale(1.3) !important;
+          transform: scale(1.3) !important;
+}
 .our-projects__slider-item .item-absolute-link {
   position: absolute;
   top: 0;

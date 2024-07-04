@@ -1406,6 +1406,9 @@ img, iframe, video {
             .our-projects__btn a {
                 transform: translateX(10px);
             }
+            .our-projects__item-image img {
+                transform: scale(1.3) !important;
+            }
         }
         .item-absolute-link {
             position: absolute;
